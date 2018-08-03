@@ -1,0 +1,9 @@
+[submodule ".emacs.d"]
+	path = .emacs.d
+	url = https://github.com/boncheolgu/.emacs.d
+[submodule "rtags"]
+	path = rtags
+	url = https://github.com/Andersbakken/rtags.git
+[submodule ".xmonad"]
+	path = .xmonad
+	url = https://github.com/boncheolgu/.xmonad
