@@ -1,0 +1,13 @@
+! Xft settings ---------------------------------------------------------------
+
+Xft.dpi:        135
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.autohint:   false
+Xft.hintstyle:  hintfull
+Xft.lcdfilter:  lcddefault
+
+xterm*font: xft:nanumgothiccoding:size=13
+xterm*boldFont: xft:nanumgothiccoding:bold:size=13
+xterm*italicFont: xft:nanumgothiccoding:italic:size=13
