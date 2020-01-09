@@ -8,3 +8,4 @@
 (package! browse-kill-ring)
 (package! easy-kill)
 (package! magit-section)
+(package! clang-format)
