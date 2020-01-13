@@ -15,6 +15,7 @@ for_window [title="Calculator"] floating enable
 for_window [class="Xfce4-terminal"] border pixel
 
 assign [class="Firefox"] → 2
+assign [class="Emacs"] → 3
 assign [class="thunar"] → 4
 assign [class="Evince"] → 5
 assign [class="Slack"] → 10
@@ -51,7 +52,7 @@ set $lock_command "i3lock -c 000000 -f"
 exec --no-startup-id xautolock -detectsleep -time 10 -locker $lock_command -notify 30 -notifier "notify-send -t 10000 -- 'LOCKING screen in 30 seconds'"
 
 # Lock screen
-# bindsym $mod+Control+l exec $lock_command
+bindsym $mod+Control+l exec "xdg-screensaver lock"
 
 # kill focused window
 bindsym $mod+Shift+c kill
@@ -136,8 +137,8 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+bracketleft focus output left
 bindsym $mod+bracketright focus output right
 
-bindsym $mod+Shift+bracketleft move container to output left
-bindsym $mod+Shift+bracketright move container to output right
+bindsym $mod+Shift+bracketleft move workspace to output left
+bindsym $mod+Shift+bracketright move workspace to output right
 
 # Make the currently focused window a scratchpad
 bindsym $mod+comma move scratchpad
@@ -193,6 +194,6 @@ exec --no-startup-id "nm-applet --sm-disable"
 exec --no-startup-id "unclutter -idle 3"
 exec --no-startup-id "firefox"
 exec --no-startup-id "slack"
-exec --no-startup-id i3-msg 'workspace 3; exec emacs; workspace 1'
+exec --no-startup-id "emacs"
 
 focus_follows_mouse no
