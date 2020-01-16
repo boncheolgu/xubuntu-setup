@@ -13,6 +13,7 @@
 for_window [class="Gimp"] floating enable
 for_window [title="Calculator"] floating enable
 for_window [class="Xfce4-terminal"] border pixel
+for_window [class="Firefox"] border pixel
 
 assign [class="Firefox"] → 2
 assign [class="Emacs"] → 3
@@ -47,6 +48,8 @@ floating_modifier $mod
 # bindsym $mod+e exec "emacsclient -c"
 
 set $lock_command "i3lock -c 000000 -f"
+
+workspace_auto_back_and_forth yes
 
 # Automatically lock screen after 10 mins inactivity
 exec --no-startup-id xautolock -detectsleep -time 10 -locker $lock_command -notify 30 -notifier "notify-send -t 10000 -- 'LOCKING screen in 30 seconds'"
