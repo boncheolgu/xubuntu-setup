@@ -16,7 +16,7 @@ for_window [class="Xfce4-terminal"] border pixel
 for_window [class="Firefox"] border pixel
 
 assign [class="Firefox"] → 2
-assign [class="Emacs"] → 3
+# assign [class="Emacs"] → 3
 assign [class="thunar"] → 4
 assign [class="Evince"] → 5
 assign [class="Slack"] → 10
@@ -49,7 +49,7 @@ floating_modifier $mod
 
 set $lock_command "i3lock -c 000000 -f"
 
-workspace_auto_back_and_forth yes
+# workspace_auto_back_and_forth yes
 
 # Automatically lock screen after 10 mins inactivity
 exec --no-startup-id xautolock -detectsleep -time 10 -locker $lock_command -notify 30 -notifier "notify-send -t 10000 -- 'LOCKING screen in 30 seconds'"
@@ -143,11 +143,17 @@ bindsym $mod+bracketright focus output right
 bindsym $mod+Shift+bracketleft move workspace to output left
 bindsym $mod+Shift+bracketright move workspace to output right
 
+bindsym $mod+Shift+comma mark "comma", move scratchpad
+bindsym $mod+comma [con_mark="comma"] scratchpad show
+
+bindsym $mod+Shift+period mark "period", move scratchpad
+bindsym $mod+period [con_mark="period"] scratchpad show
+
 # Make the currently focused window a scratchpad
-bindsym $mod+comma move scratchpad
+bindsym $mod+Shift+slash move scratchpad
 
 # Show the first scratchpad window
-bindsym $mod+period scratchpad show
+bindsym $mod+slash scratchpad show
 
 # # reload the configuration file
 # bindsym $mod+Shift+c reload
@@ -196,7 +202,6 @@ exec --no-startup-id "blueman-applet"
 exec --no-startup-id "nm-applet --sm-disable"
 exec --no-startup-id "unclutter -idle 3"
 exec --no-startup-id "firefox"
-exec --no-startup-id "slack"
 exec --no-startup-id "emacs"
 
 focus_follows_mouse no
